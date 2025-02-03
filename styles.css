@@ -1,0 +1,81 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #1a1a2e;
+    color: #f8f8f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Poem Animation */
+.poem-line {
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Improved Rose Design */
+.rose-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rose {
+    position: relative;
+    width: 60px;
+    height: 80px;
+    background: #ff4d6d;
+    border-radius: 50%;
+    animation: glow 2s infinite alternate;
+}
+
+.rose::before,
+.rose::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: #ff3366;
+    border-radius: 50%;
+}
+
+.rose::before {
+    transform: rotate(-30deg);
+    left: -20px;
+}
+
+.rose::after {
+    transform: rotate(30deg);
+    right: -20px;
+}
+
+/* Rose Stem */
+.stem {
+    width: 8px;
+    height: 80px;
+    background: green;
+    margin-top: -10px;
+}
+
+/* Glow Effect */
+@keyframes glow {
+    from { box-shadow: 0 0 5px #ff4d6d; }
+    to { box-shadow: 0 0 20px #ff4d6d; }
+}
